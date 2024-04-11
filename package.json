@@ -1,0 +1,26 @@
+{
+  "name": "stylex-test",
+  "repository": "git@github.com:codynova/stylex-test.git",
+  "scripts": {
+    "dev": "yarn workspace cds-stylex dev",
+    "build": "yarn workspace cds-stylex build",
+    "start": "yarn workspace cds-stylex start",
+    "dev-app": "yarn workspace webpack-app dev",
+    "start-app": "yarn workspace webpack-app start"
+  },
+  "engines": {
+    "node": "^20.10"
+  },
+  "packageManager": "yarn@4.0.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@stylexjs/eslint-plugin": "^0.5",
+    "@types/node": "^20",
+    "eslint": "^9",
+    "prettier": "^3",
+    "typescript-eslint": "^7"
+  }
+}

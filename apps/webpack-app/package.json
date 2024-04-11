@@ -1,0 +1,74 @@
+{
+  "name": "webpack-app",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "rm -rf dist && webpack --mode production",
+    "start": "yarn build && webpack serve --mode production"
+  },
+  "main": "./lib/index.js",
+  "module": "./esm/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "import": "./esm/index.js",
+      "require": "./lib/index.js",
+      "default": "./esm/index.js"
+    },
+    "./styles.css": {
+      "import": "./esm/styles.css",
+      "require": "./lib/styles.css",
+      "default": "./esm/styles.css"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "import": "./esm/*.js",
+      "require": "./lib/*.js",
+      "default": "./esm/*.js"
+    }
+  },
+  "files": [
+    "esm",
+    "lib",
+    "dts",
+    "src"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7"
+  },
+  "peerDependencies": {
+    "@stylexjs/stylex": "^0.5",
+    "framer-motion": "^11",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@babel/core": "^7",
+    "@babel/plugin-transform-runtime": "^7",
+    "@babel/preset-env": "^7",
+    "@babel/preset-react": "^7",
+    "@babel/preset-typescript": "^7",
+    "@rollup/plugin-babel": "^6",
+    "@rollup/plugin-node-resolve": "^15",
+    "@rollup/plugin-terser": "^0.4",
+    "@stylexjs/babel-plugin": "^0.5",
+    "@stylexjs/stylex": "^0.5",
+    "@stylexjs/webpack-plugin": "^0.5",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "babel-loader": "^9",
+    "framer-motion": "^11",
+    "html-webpack-plugin": "^5",
+    "mini-css-extract-plugin": "^2",
+    "react": "^18",
+    "react-dom": "^18",
+    "rollup": "^4",
+    "tslib": "^2",
+    "typescript": "~5.4.3",
+    "webpack": "^5",
+    "webpack-cli": "^5",
+    "webpack-dev-server": "^5"
+  }
+}
